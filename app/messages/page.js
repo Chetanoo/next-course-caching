@@ -10,6 +10,7 @@ export default async function MessagesPage() {
     // cache: "no-store",
     // next: {
     //   revalidate: 5, // amount of seconds to use cache before revalidation
+    //   tags: ['msg'],
     // },
   });
   const messages = await response.json();
