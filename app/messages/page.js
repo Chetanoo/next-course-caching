@@ -5,7 +5,7 @@ import { getMessages } from "@/lib/messages";
 // export const revalidate = 5; // reserved name, doing the same as revalidate in fetch options
 // export const dynamic = "force-dynamic";
 
-export default function MessagesPage() {
+export default async function MessagesPage() {
   // unstable_noStore();
   // const response = await fetch("http://localhost:8080/messages", {
   //   // cache: "no-store",
@@ -16,7 +16,7 @@ export default function MessagesPage() {
   // });
   // const messages = await response.json();\
 
-  const messages = getMessages();
+  const messages = await getMessages();
 
   if (!messages || messages.length === 0) {
     return <p>No messages found</p>;
